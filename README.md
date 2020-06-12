@@ -12,7 +12,7 @@ Go 言語に入門したので、練習がてら [Open Data Structures](http://o
 - 第3章: SLList, DLList
 - 第5章: ChainedHashTable
 - 第6章: BinaryTree, BinarySearchTree
-- 第9章: ReaBlackTree
+- 第9章: RedBlackTree
 - 第10章: BinaryHeap
 - 第11章: MergeSort, QuickSort
 - 第12章: 幅優先探索, 深さ優先探索
