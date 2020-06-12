@@ -2,8 +2,8 @@ package arraystack
 
 type ArrayStack struct {
     n int      // number of elements
-    array []int   // array (slice) used for ArrayStack implementation
-    cap int  // capacity of ArrayStack (= size of array)
+    arr []int   // array (slice) used for ArrayStack implementation
+    cap int  // capacity of ArrayStack (= size of arr)
 }
 
 func New() ArrayStack {
@@ -15,12 +15,12 @@ func (this ArrayStack) Size() int {
 }
 
 func (this ArrayStack) Get(i int) int {
-    return this.array[i]
+    return this.arr[i]
 }
 
 func (this *ArrayStack) Set(i int, x int) int {
-    y := this.array[i]
-    this.array[i] = x
+    y := this.arr[i]
+    this.arr[i] = x
     return y
 }
 
@@ -29,19 +29,19 @@ func (this *ArrayStack) Add(i int, x int) {
         this.Resize()
     }
     for j := this.n; j > i; j-- {
-        this.array[j] = this.array[j-1]
+        this.arr[j] = this.arr[j-1]
     }
-    this.array[i] = x
+    this.arr[i] = x
     this.n++
 }
 
 func (this *ArrayStack) Remove(i int) int {
-    x := this.array[i]
+    x := this.arr[i]
     for j := i; j < this.n-1; j++ {
-        this.array[j] = this.array[j+1]
+        this.arr[j] = this.arr[j+1]
     }
     this.n--
-    if len(this.array) >= 3 * this.n {
+    if len(this.arr) >= 3 * this.n {
         this.Resize()
     }
     return x
@@ -51,9 +51,9 @@ func (this *ArrayStack) Resize() {
     this.cap = Max(1, 2 * this.n)
     newArray := make([]int, this.cap)
     for i := 0; i < this.n; i++ {
-        newArray[i] = this.array[i]
+        newArray[i] = this.arr[i]
     }
-    this.array = newArray
+    this.arr = newArray
 }
 
 func Max(x, y int) int {
