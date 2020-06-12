@@ -10,50 +10,50 @@ func New() ArrayStack {
     return ArrayStack{}
 }
 
-func (AS ArrayStack) Size() int {
-    return AS.n
+func (this ArrayStack) Size() int {
+    return this.n
 }
 
-func (AS ArrayStack) Get(i int) int {
-    return AS.array[i]
+func (this ArrayStack) Get(i int) int {
+    return this.array[i]
 }
 
-func (AS *ArrayStack) Set(i int, x int) int {
-    y := AS.array[i]
-    AS.array[i] = x
+func (this *ArrayStack) Set(i int, x int) int {
+    y := this.array[i]
+    this.array[i] = x
     return y
 }
 
-func (AS *ArrayStack) Add(i int, x int) {
-    if AS.n == AS.cap {
-        AS.Resize()
+func (this *ArrayStack) Add(i int, x int) {
+    if this.n == this.cap {
+        this.Resize()
     }
-    for j := AS.n; j > i; j-- {
-        AS.array[j] = AS.array[j-1]
+    for j := this.n; j > i; j-- {
+        this.array[j] = this.array[j-1]
     }
-    AS.array[i] = x
-    AS.n++
+    this.array[i] = x
+    this.n++
 }
 
-func (AS *ArrayStack) Remove(i int) int {
-    x := AS.array[i]
-    for j := i; j < AS.n-1; j++ {
-        AS.array[j] = AS.array[j+1]
+func (this *ArrayStack) Remove(i int) int {
+    x := this.array[i]
+    for j := i; j < this.n-1; j++ {
+        this.array[j] = this.array[j+1]
     }
-    AS.n--
-    if len(AS.array) >= 3 * AS.n {
-        AS.Resize()
+    this.n--
+    if len(this.array) >= 3 * this.n {
+        this.Resize()
     }
     return x
 }
 
-func (AS *ArrayStack) Resize() {
-    AS.cap = Max(1, 2 * AS.n)
-    newArray := make([]int, AS.cap)
-    for i := 0; i < AS.n; i++ {
-        newArray[i] = AS.array[i]
+func (this *ArrayStack) Resize() {
+    this.cap = Max(1, 2 * this.n)
+    newArray := make([]int, this.cap)
+    for i := 0; i < this.n; i++ {
+        newArray[i] = this.array[i]
     }
-    AS.array = newArray
+    this.array = newArray
 }
 
 func Max(x, y int) int {
