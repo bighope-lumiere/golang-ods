@@ -16,15 +16,15 @@ func TestAdd(t *testing.T) {
     if as.n != 1 {
         t.Errorf("ArrayStack has wrong size %v", as.n)
     }
-    if as.array[0] != 1 {
-        t.Errorf("ArrayStack[0] has wrong value %v", as.array[0])
+    if as.arr[0] != 1 {
+        t.Errorf("ArrayStack[0] has wrong value %v", as.arr[0])
     }
     as.Add(0, -1)
     if as.n != 1 {
         t.Errorf("ArrayStack has wrong size %v", as.n)
     }
-    if as.array[0] != -1 {
-        t.Errorf("ArrayStack[0] has wrong value %v", as.array[0])
+    if as.arr[0] != -1 {
+        t.Errorf("ArrayStack[0] has wrong value %v", as.arr[0])
     }
 }
 
