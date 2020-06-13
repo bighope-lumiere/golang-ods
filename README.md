@@ -4,6 +4,21 @@
 
 Go 言語に入門したので、練習がてら [Open Data Structures](http://opendatastructures.org/) のデータ構造を Go 言語で実装してみようと思います。
 
+### テストの実行
+
+ルートディレクトリにて次のコマンドを実行して GOPATH を設定すれば良さそう
+
+```shell
+export GOPATH=`pwd`
+```
+
+## 実装したデータ構造
+
+- ArrayStack
+- ArrayQueue
+- ArrayDeque
+- DualArrayDeque
+
 ## 実装したいデータ構造
 
 まえがきで特に重要だと書いてあるデータ構造は最低限実装したいな...
