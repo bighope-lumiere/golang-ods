@@ -1,4 +1,5 @@
 package arraystack
+
 import (
     "testing"
 )
@@ -64,5 +65,25 @@ func TestRemove(t *testing.T) {
         if test != i {
             t.Errorf("Remove(0) returns wrong value %v, Expected %v", test, i)
         }
+    }
+}
+
+func TestAddAll(t *testing.T) {
+    as := New()
+    c1 := New()
+    for i := 0; i < 10; i++ {
+        c1.Add(i, i+1)
+    }
+    c2 := New()
+    for i := 0; i < 5; i++ {
+        c2.Add(i, 2*(i+1))
+    }
+    as.AddAll(0, c1)
+    as.AddAll(8, c2)
+    if as.Get(7) != 8 {
+        t.Errorf("Get(7) returns wrong value %v, Expected 8", as.Get(7))
+    }
+    if as.Get(8) != 2 {
+        t.Errorf("Get(8) returns wrong value %v, Expected 2", as.Get(8))
     }
 }
