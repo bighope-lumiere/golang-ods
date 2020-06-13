@@ -19,6 +19,8 @@ export GOPATH=`pwd`
 - ArrayDeque
 - DualArrayDeque
 - RootishArrayStack
+- RandomQueue
+- SLList
 
 ## 実装したいデータ構造
 
