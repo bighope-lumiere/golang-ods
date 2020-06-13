@@ -1,7 +1,7 @@
 package dualarraydeque
 
 import (
-    "golang-ods/src/arraystack"
+    "../arraystack"
 )
 
 type DualArrayDeque struct {
