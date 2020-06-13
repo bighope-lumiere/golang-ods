@@ -11,8 +11,8 @@ type DualArrayDeque struct {
 
 func New() DualArrayDeque {
     return DualArrayDeque{
-        front: arraystack.New()
-        back: arraystack.New()
+        front: arraystack.New(),
+        back: arraystack.New(),
     }
 }
 
