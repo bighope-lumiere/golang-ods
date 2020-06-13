@@ -18,6 +18,7 @@ export GOPATH=`pwd`
 - ArrayQueue
 - ArrayDeque
 - DualArrayDeque
+- RootishArrayStack
 
 ## 実装したいデータ構造
 
@@ -31,6 +32,10 @@ export GOPATH=`pwd`
 - 第10章: BinaryHeap
 - 第11章: MergeSort, QuickSort
 - 第12章: 幅優先探索, 深さ優先探索
+
+## 今後の課題
+
+- int しか受け付けることができないので不便（ RootishArrayStack の実装時に ArrayStack を import するだけではうまくいかないなど）
 
 ## List インターフェースとは
 
